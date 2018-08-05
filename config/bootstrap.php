@@ -70,7 +70,7 @@ use Cake\Utility\Security;
 try {
     Configure::config('default', new PhpConfig());
     Configure::load('app', 'default', false);
-    Plugin::load('Bootstrap' ['autoload' => true]);
+
 } catch (\Exception $e) {
     exit($e->getMessage() . "\n");
 }
@@ -152,6 +152,9 @@ Email::setConfigTransport(Configure::consume('EmailTransport'));
 Email::setConfig(Configure::consume('Email'));
 Log::setConfig(Configure::consume('Log'));
 Security::setSalt(Configure::consume('Security.salt'));
+
+
+
 
 /*
  * The default crypto extension in 3.0 is OpenSSL.
